@@ -23,10 +23,10 @@ In general, the obtained statistics indicate that the temperature range of June 
 Query 1: The following queries afford summary statistics for precipitation in June and December in Oahu
 
 June:
-  prcp = session.query(Measurement.prcp).\  \
-  filter(extract('month', Measurement.date) == 6).all() \
-  dfprcp = pd.DataFrame(prcp, columns = ['precipitation']) \
-  dfprcp.describe()
+    prcp = session.query(Measurement.prcp).\
+    filter(extract('month', Measurement.date) == 6).all()
+    dfprcp = pd.DataFrame(prcp, columns = ['precipitation'])
+    dfprcp.describe()
 
 December:
   prcp = session.query(Measurement.prcp).\   \
