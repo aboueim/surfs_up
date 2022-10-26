@@ -30,26 +30,29 @@ June:
     dfprcp.describe()
 
 December:
-  prcp = session.query(Measurement.prcp).\   \
-  filter(extract('month', Measurement.date) == 12).all() \
-  dfprcp = pd.DataFrame(prcp, columns = ['precipitation']) \
-  dfprcp.describe()
+
+      prcp = session.query(Measurement.prcp).\
+      filter(extract('month', Measurement.date) == 12).all()
+      dfprcp = pd.DataFrame(prcp, columns = ['precipitation'])
+      dfprcp.describe()
 
 
 Query 2: The query below allows for ploting pericipitation amount during the months of June and December. This way, a more nuanced comparison of pericipation intensity in these months can be realized.
 
 June:
-  prcp = session.query(Measurement.date, Measurement.prcp).\  \
-  filter(extract('month', Measurement.date) == 6).all() \
-  dfprcp = pd.DataFrame(prcp, columns = ['date','precipitation']) \
-  dfprcp.set_index(dfprcp['date'], inplace=True) \
-  dfprcp = dfprcp.sort_index() \
-  dfprcp.plot()
+
+      prcp = session.query(Measurement.date, Measurement.prcp).\
+      filter(extract('month', Measurement.date) == 6).all()
+      dfprcp = pd.DataFrame(prcp, columns = ['date','precipitation'])
+      dfprcp.set_index(dfprcp['date'], inplace=True)
+      dfprcp = dfprcp.sort_index()
+      dfprcp.plot()
 
 December:
-  prcp = session.query(Measurement.date, Measurement.prcp).\  \
-  filter(extract('month', Measurement.date) == 12).all() \
-  dfprcp = pd.DataFrame(prcp, columns = ['date','precipitation']) \
-  dfprcp.set_index(dfprcp['date'], inplace=True) \
-  dfprcp = dfprcp.sort_index() \
-  dfprcp.plot()
+
+      prcp = session.query(Measurement.date, Measurement.prcp).\
+      filter(extract('month', Measurement.date) == 12).all()
+      dfprcp = pd.DataFrame(prcp, columns = ['date','precipitation'])
+      dfprcp.set_index(dfprcp['date'], inplace=True)
+      dfprcp = dfprcp.sort_index()
+      dfprcp.plot()
