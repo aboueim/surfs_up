@@ -6,13 +6,15 @@ An investor asked me to analyze and report weather data to support a business pl
 
 ## Results
 
-Below I added two screenshot of the summary statistics of Oahu's temperature in June and December.
+Below I added two screenshots of the summary statistics of Oahu's temperature in June and December.
 
 ![This is an image](/June.png)  ![This is an image](/December.png) 
 
+According the above resutls:
+
 - The average temperature in Oahu for the months of June is slightly (3 °F) more than December.
 - While the maximum historical temperature for June (85 °F) is almost similar to December (83 °F), the minimum historical temperature in December (56 °F) is moderately lower than June (64 °F).
-- Overall, the temperature disctirubution of June and December in Oahu are comparable (roughly 2 °F difference in first, second, and third quartiles).
+- Overall, the temperature disctirubutions of June and December in Oahu look comparable (roughly 2 °F difference in first, second, and third quartiles).
 - The obtained statistics indicate that the temperature range of June and December in Oahu follow almost similar patterns. This finding support the sustainability of the surf and ice cream shop business year-round.
 
 ## Summary: 
