@@ -20,7 +20,35 @@ According the above resutls:
 
 In general, the obtained statistics indicate that the temperature range of June and December in Oahu follow almost similar patterns. This finding support the sustainability of the surf and ice cream shop business year-round. Despite these promising results, however, temperature similarity may not be sufficient to make the final investment decision. In fact, there are other influential factors such as precipitation that should also be considered to ensure business sustainability. Given that, I suggest running the following queries to further investigate weather condition in Oahu:
 
-Query 1:
+Query 1: The following queries afford summary statistics for precipitation in June and December in Oahu
+
+June:
+  prcp = session.query(Measurement.prcp).\
+  filter(extract('month', Measurement.date) == 6).all()
+  dfprcp = pd.DataFrame(prcp, columns = ['precipitation'])
+  dfprcp.describe()
+
+December:
+  prcp = session.query(Measurement.prcp).\
+  filter(extract('month', Measurement.date) == 12).all()
+  dfprcp = pd.DataFrame(prcp, columns = ['precipitation'])
+  dfprcp.describe()
 
 
+Query 2: The query below allows for ploting pericipitation amount during the months of June and December. This way, a more nuanced comparison of pericipation intensity in these months can be realized.
 
+June:
+  prcp = session.query(Measurement.date, Measurement.prcp).\
+  filter(extract('month', Measurement.date) == 6).all()
+  dfprcp = pd.DataFrame(prcp, columns = ['date','precipitation'])
+  dfprcp.set_index(dfprcp['date'], inplace=True)
+  dfprcp = dfprcp.sort_index()
+  dfprcp.plot()
+
+December:
+  prcp = session.query(Measurement.date, Measurement.prcp).\
+  filter(extract('month', Measurement.date) == 12).all()
+  dfprcp = pd.DataFrame(prcp, columns = ['date','precipitation'])
+  dfprcp.set_index(dfprcp['date'], inplace=True)
+  dfprcp = dfprcp.sort_index()
+  dfprcp.plot()
