@@ -20,7 +20,7 @@ According the above resutls:
 
 In general, the obtained statistics indicate that the temperature range of June and December in Oahu follow almost similar patterns. This finding support the sustainability of the surf and ice cream shop business year-round. Despite these promising results, however, temperature similarity may not be sufficient to make the final investment decision. In fact, there are other influential factors such as precipitation that should also be considered to ensure business sustainability. Given that, I suggest running the following queries to further investigate weather condition in Oahu:
 
-**Query 1:** The following queries afford summary statistics for precipitation in June and December in Oahu
+**Query 1:** The following queries afford summary statistics for precipitation in June and December in Oahu.
 
 **June:**
 
